@@ -36,7 +36,7 @@ func (t *Transport) RoundTrip(req *http.Request) (*http.Response, error) {
 		return nil, err
 	}
 
-	created := time.Now().Format("2006-01-02T15:04:05Z")
+	created := time.Now().UTC().Format("2006-01-02T15:04:05Z")
 
 	// Shallow copy request
 	var reqWithHeader http.Request = *req
